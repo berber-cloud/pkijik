@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Радужный градиент | Современный стиль</title>
+    <title>Моя страница</title>
     <style>
-        /* Сброс отступов и базовые настройки */
         * {
             margin: 0;
             padding: 0;
@@ -17,135 +16,117 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            padding: 20px;
             
-            /* Фон с вертикальной "полосой" перелива */
-            background: linear-gradient( 
-                180deg, 
+            /* Радужный фон с вертикальным движением */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, 
                 #ff0066, #ff6600, #ffcc00, 
-                #33cc33, #3399ff, #6633cc, #ff33cc
-            );
-            background-size: 100% 400%;  /* Растягиваем по вертикали в 4 раза */
-            
-            /* Очень медленное движение сверху вниз */
-            animation: verticalFlow 20s linear infinite;
+                #33cc33, #3399ff, #6633cc, #ff33cc);
+            background-size: 100% 700%; /* Растягиваем на всю высоту градиента */
+            animation: rainbowFlow 25s linear infinite; /* Медленное движение */
         }
 
-        /* "Окно" для главного заголовка */
-        .title-window {
-            background: rgba(255, 255, 255, 0.15);  /* Полупрозрачный белый */
-            backdrop-filter: blur(8px);              /* Эффект стекла (размытие фона) */
-            -webkit-backdrop-filter: blur(8px);
-            
-            border-radius: 60px;                     /* Сильное скругление углов */
-            padding: 40px 80px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
-                        0 0 0 1px rgba(255, 255, 255, 0.3) inset;  /* Лёгкая внутренняя обводка */
-            
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            max-width: 90vw;                          /* Ограничение по ширине */
-        }
-
-        /* Контейнер для текста внутри окна */
-        .content {
-            text-align: center;
-        }
-
-        /* Главный текст — современный шрифт со скруглениями */
-        .main-text {
-            /* Современный геометрический шрифт */
-            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, 
-                         'Helvetica Neue', sans-serif;
-            font-weight: 800;
-            
-            font-size: clamp(2.5rem, 12vw, 6rem);
-            
-            /* Делаем буквы визуально более мягкими, скруглёнными */
-            letter-spacing: -0.02em;                   /* Лёгкая разреженность */
-            
-            /* Градиентный текст для красоты (можно заменить на жёлтый) */
-            background: linear-gradient(135deg, #FFE77A, #FFD700);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;                         /* Прозрачный, виден градиент */
-            
-            /* Тень для объёма */
-            text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
-            
-            line-height: 1.2;
-            margin-bottom: 15px;
-            
-            /* Дополнительно: скруглённые концы у букв (металлика) */
-            font-stretch: expanded;
-        }
-
-        /* Мелкий заголовок (чёрный) */
-        .small-title {
-            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
-            font-weight: 400;
-            font-size: clamp(0.9rem, 3.5vw, 1.6rem);
-            
-            color: #000000;                             /* Чистый чёрный */
-            
-            background: rgba(255, 255, 255, 0.3);       /* Легкая подложка */
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            
-            border-radius: 100px;                       /* Скруглённый фон */
-            padding: 8px 24px;
-            display: inline-block;                       /* Чтобы фон был по тексту */
-            
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            letter-spacing: 0.5px;
-            margin-top: 10px;
-        }
-
-        /* Анимация вертикального движения градиента (полоса сверху вниз) */
-        @keyframes verticalFlow {
+        @keyframes rainbowFlow {
             0% {
-                background-position: 0% 0%;      /* Начало: верх градиента */
-            }
-            50% {
-                background-position: 0% 50%;     /* Середина: центр градиента */
+                background-position: 0% 0%;
             }
             100% {
-                background-position: 0% 100%;     /* Конец: низ градиента */
+                background-position: 0% 100%;
             }
         }
 
-        /* Адаптивность для мобильных */
-        @media (max-width: 700px) {
-            .title-window {
-                padding: 30px 40px;
-                border-radius: 40px;
-            }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
-        @media (max-width: 450px) {
-            .title-window {
-                padding: 25px 20px;
-                border-radius: 30px;
+        .main-title {
+            color: #000000;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            
+            /* Белое непрозрачное окно */
+            background-color: #ffffff;
+            border-radius: 25px; /* Чуть больше скругление для современности */
+            padding: 30px 40px;
+            margin: 0 auto 30px auto;
+            max-width: 900px;
+            
+            /* Лёгкая тень для объёма */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            
+            /* Белая рамка (опционально, можно убрать) */
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .bottom-title {
+            color: #000000; /* Чёрный цвет как в примере, но можно изменить */
+            font-size: 1.5rem;
+            font-weight: 400;
+            position: fixed;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            
+            /* Белое непрозрачное окно */
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 18px 30px;
+            margin: 0 auto;
+            max-width: 600px;
+            
+            /* Тень как в примере, но нейтральная */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            
+            /* Лёгкая обводка */
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+                padding: 25px 30px;
+                border-radius: 20px;
             }
             
-            .small-title {
-                padding: 6px 16px;
+            .bottom-title {
+                font-size: 1.2rem;
+                padding: 15px 25px;
+                bottom: 30px;
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+                padding: 20px 25px;
+                border-radius: 15px;
+            }
+            
+            .bottom-title {
+                font-size: 1rem;
+                padding: 12px 20px;
+                bottom: 20px;
+                border-radius: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Окно со скруглёнными углами -->
-    <div class="title-window">
-        <div class="content">
-            <!-- Текст по центру (замени на свой) -->
-            <h1 class="main-text">
-                ПОШЕЛ<br>НАХУЙ
-            </h1>
-            
-            <!-- Мелкий чёрный заголовок -->
-            <div class="small-title">
-                кто прочитал, тот гей
-            </div>
-        </div>
+    <div class="container">
+        <h1 class="main-title">ЗДЕСЬ БУДЕТ ГЛАВНЫЙ ЗАГОЛОВОК</h1>
+        <h2 class="bottom-title">ЗДЕСЬ БУДЕТ НИЖНИЙ ЗАГОЛОВОК</h2>
     </div>
 </body>
 </html>
