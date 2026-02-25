@@ -20,12 +20,11 @@
             padding: 20px;
             
             /* Радужный фон с вертикальным движением */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(180deg, 
                 #ff0066, #ff6600, #ffcc00, 
                 #33cc33, #3399ff, #6633cc, #ff33cc);
-            background-size: 100% 700%; /* Растягиваем на всю высоту градиента */
-            animation: rainbowFlow 25s linear infinite; /* Медленное движение */
+            background-size: 100% 700%;
+            animation: rainbowFlow 25s linear infinite;
         }
 
         @keyframes rainbowFlow {
@@ -46,29 +45,32 @@
         }
 
         .main-title {
-            color: #000000;
+            color: #FFD700; /* Яркий жёлтый */
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 1px;
             line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            
+            /* Мультяшный шрифт */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', 'Patrick Hand', cursive, sans-serif;
             
             /* Белое непрозрачное окно */
             background-color: #ffffff;
-            border-radius: 25px; /* Чуть больше скругление для современности */
+            border-radius: 25px;
             padding: 30px 40px;
             margin: 0 auto 30px auto;
             max-width: 900px;
             
-            /* Лёгкая тень для объёма */
+            /* Тень для объёма */
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            
-            /* Белая рамка (опционально, можно убрать) */
             border: 1px solid rgba(0, 0, 0, 0.05);
+            
+            /* Дополнительные мультяшные эффекты */
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
         }
 
         .bottom-title {
-            color: #000000; /* Чёрный цвет как в примере, но можно изменить */
+            color: #000000;
             font-size: 1.5rem;
             font-weight: 400;
             position: fixed;
@@ -77,6 +79,9 @@
             right: 0;
             text-align: center;
             
+            /* Тот же мультяшный шрифт */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', 'Patrick Hand', cursive, sans-serif;
+            
             /* Белое непрозрачное окно */
             background-color: #ffffff;
             border-radius: 20px;
@@ -84,10 +89,7 @@
             margin: 0 auto;
             max-width: 600px;
             
-            /* Тень как в примере, но нейтральная */
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            
-            /* Лёгкая обводка */
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
@@ -125,8 +127,8 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="main-title">ЗДЕСЬ БУДЕТ ГЛАВНЫЙ ЗАГОЛОВОК</h1>
-        <h2 class="bottom-title">ЗДЕСЬ БУДЕТ НИЖНИЙ ЗАГОЛОВОК</h2>
+        <h1 class="main-title">ПОШЕЛ НАХУЙ</h1>
+        <h2 class="bottom-title">Кто прочитал, тот гей</h2>
     </div>
 </body>
 </html>
