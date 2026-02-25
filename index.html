@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Радужный текст</title>
+    <style>
+        /* Сброс отступов и растягиваем на всю высоту */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Растягиваем фон на весь экран */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;  /* Горизонтальное центрирование */
+            align-items: center;      /* Вертикальное центрирование */
+            
+            /* Радужный фон (градиент) с анимацией */
+            background: linear-gradient(124deg, 
+                #ff2400, #e81d1d, #e8b71d, #e3e81d, 
+                #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 180%;  /* Растягиваем, чтобы градиент был большим и плавно двигался */
+            
+            /* Анимация движения фона */
+            animation: rainbow 10s ease infinite;
+        }
+
+        /* Контейнер для текста */
+        .content {
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Крупный текст по центру */
+        .main-text {
+            font-size: clamp(3rem, 15vw, 8rem);  /* Адаптивный размер */
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            color: #FFD700;  /* Ярко-жёлтый */
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);  /* Лёгкая тень для читаемости */
+            letter-spacing: 2px;
+            margin-bottom: 0.5em;  /* Отступ снизу */
+            line-height: 1.2;
+        }
+
+        /* Мелкий заголовок снизу */
+        .small-title {
+            font-size: clamp(1rem, 4vw, 2rem);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-weight: normal;
+            color: #000000;  /* Чёрный */
+            opacity: 0.8;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(0,0,0,0.2);  /* Лёгкая линия для отделения (по желанию) */
+            padding-top: 20px;
+            display: inline-block;  /* Чтобы линия была под текст */
+        }
+
+        /* Анимация перемещения градиента */
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 0%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        /* Для очень маленьких экранов можно чуть уменьшить отступы */
+        @media (max-width: 600px) {
+            .small-title {
+                border-top: none;
+                padding-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Здесь ты можешь заменить текст на свой -->
+        <div class="main-text">
+            пошел нахуй
+        </div>
+        <!-- Здесь мелкий заголовок (подпись) -->
+        <div class="small-title">
+            Кто прочитал, тот гей
+        </div>
+    </div>
+</body>
+</html>
